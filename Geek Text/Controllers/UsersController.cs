@@ -17,10 +17,16 @@ namespace Geek_Text.Controllers
             _userRepository = userRepository;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public async Task<IEnumerable<User>> Get()
+        [HttpGet("id/{id}", Name = "GetUserById")]
+        public async Task<User> GetUserById(int id)
         {
-            return await _userRepository.GetUsers();
+            return await _userRepository.GetUser(new User { Id = id });
+        }
+
+        [HttpGet("email/{email}", Name = "GetUserByEmail")]
+        public async Task<User> GetUserByEmail(string email)
+        {
+            return await _userRepository.GetUser(new User { Email = email });
         }
     }
 }
