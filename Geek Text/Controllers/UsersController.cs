@@ -20,6 +20,7 @@ namespace Geek_Text.Controllers
         [HttpGet("id/{id}", Name = "GetUserById")]
         public async Task<User> GetUserById(int id)
         {
+            var testVar = "";
             return await _userRepository.GetUser(new User { Id = id });
         }
 
