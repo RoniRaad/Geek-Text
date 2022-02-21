@@ -23,10 +23,28 @@ namespace Geek_Text.Controllers
             return await _userRepository.GetUser(new User { Id = id });
         }
 
+        [HttpGet]
+        public async Task<IEnumerable <User>> GetUsers()
+        {
+            return await _userRepository.GetUsers();
+        }
+
+
         [HttpGet("email/{email}", Name = "GetUserByEmail")]
         public async Task<User> GetUserByEmail(string email)
         {
             return await _userRepository.GetUser(new User { Email = email });
         }
+
+
+        [HttpPost(Name = "CreateUser")]
+        public async Task<User> CreateUserByEmail([FromBody] User user)
+       {
+            return await _userRepository.CreateUser(user);
+           
+        }
+
+    
+
     }
 }
