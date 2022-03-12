@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[BookRating]
+(
+	[Id] INT IDENTITY(0,0) NOT NULL PRIMARY KEY,
+	Rating INT NOT NULL,
+	Created TIMESTAMP NOT NULL,
+	UserId INT NOT NULL
+)
