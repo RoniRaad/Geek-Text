@@ -10,5 +10,22 @@ namespace Geek_Text.Repositories
         {
             _context = dbContext;
         }
+        public async Task<IEnumerable<UserRating>> GetRatingsByISBN(string ISBN)
+        {
+            using (var connection = _context.CreateConnection())
+            {
+                return await connection.QueryAsync<UserRating>("SELECT * FROM BookRating WHERE BookISBN=@BookId;", new { BookId = ISBN }); 
+            }
+        }
+
+        public async Task<UserRating> AddRating(UserRating userRating)
+        {
+            using (var connection = _context.CreateConnection())
+            {
+                await connection.QueryAsync<UserRating>("INSERT INTO BookRating(Rating, BookISBN, Created, UserId) VALUES (@Rating, @BookISBN @Created, @UserId)", userRating);
+            }
+
+            return userRating;
+        }
     }
 }

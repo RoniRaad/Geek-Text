@@ -1,7 +1,7 @@
-﻿CREATE TABLE [dbo].[BookRating]
+﻿CREATE TABLE [dbo].[BookComment]
 (
 	[Id] INT IDENTITY(0,0) NOT NULL PRIMARY KEY,
-	Rating INT NOT NULL,
+	Comment VARCHAR(255) NOT NULL,
 	Created TIMESTAMP NOT NULL,
 	UserId INT NOT NULL,
 	BookISBN INT NOT NULL

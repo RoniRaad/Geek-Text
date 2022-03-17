@@ -6,21 +6,27 @@ namespace Geek_Text.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CommentsController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly ILogger<UsersController> _logger;
-        private readonly CommentRepository _commentRepository;
+        private readonly UserRepository _userRepository;
 
-        public CommentsController(ILogger<UsersController> logger, CommentRepository commentRepository)
+        public UsersController(ILogger<UsersController> logger, UserRepository userRepository)
         {
             _logger = logger;
-            _commentRepository = commentRepository;
+            _userRepository = userRepository;
         }
 
         [HttpGet("id/{id}", Name = "GetUserById")]
-        public async Task<User> GetBooksComments(int ISNB)
+        public async Task<User> GetUserById(int id)
         {
-            return;
+            return await _userRepository.GetUser(new User { Id = id });
+        }
+
+        [HttpGet("email/{email}", Name = "GetUserByEmail")]
+        public async Task<User> GetUserByEmail(string email)
+        {
+            return await _userRepository.GetUser(new User { Email = email });
         }
     }
 }

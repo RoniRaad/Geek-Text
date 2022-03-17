@@ -10,22 +10,22 @@ namespace Geek_Text.Repositories
         {
             _context = dbContext;
         }
-        public async Task<IEnumerable<UserComment>> GetComments(UserComment userComment)
+        public async Task<IEnumerable<UserComment>> GetCommentsByISBN(string ISBN)
         {
             using (var connection = _context.CreateConnection())
             {
-                return await connection.QueryAsync<UserComment>("SELECT * FROM BookComments WHERE UserId=@UserId;", new { UserId = userComment.UserId });
+                return await connection.QueryAsync<UserComment>("SELECT * FROM BookComment WHERE BookISBN=@BookId;", new { BookId = ISBN });
             }
         }
 
-        public async Task<UserComment> AddComment(UserComment userComment)
+        public async Task<UserComment> AddComment(UserComment userRating)
         {
             using (var connection = _context.CreateConnection())
             {
-                 await connection.QueryAsync<UserComment>("INSERT INTO BookComments(Comment, Created, UserId) VALUES (@Comment, @Created, @UserId)", userComment);
+                await connection.QueryAsync<UserComment>("INSERT INTO BookComment(Comment, BookISBN, Created, UserId) VALUES (@Comment, @BookISBN @Created, @UserId)", userRating);
             }
 
-            return userComment;
+            return userRating;
         }
     }
 }

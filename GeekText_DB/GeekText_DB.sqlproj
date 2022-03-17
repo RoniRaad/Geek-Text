@@ -60,6 +60,6 @@
   <ItemGroup>
     <Build Include="users.sql" />
     <Build Include="BookRating.sql" />
-    <Build Include="BookComments.sql" />
+    <Build Include="BookComment.sql" />
   </ItemGroup>
 </Project>
