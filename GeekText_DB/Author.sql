@@ -1,8 +1,8 @@
-﻿CREATE TABLE [dbo].[Author]
+﻿CREATE TABLE [dbo].[Authors]
 (
 	[FirstName] VARCHAR(50) NOT NULL,
-	[LastName] VARCHAR(50) PRIMARY KEY NOT NULL,
+	[LastName] VARCHAR(50)  NOT NULL,
 	[Biography] VARCHAR(255) NULL,
 	[Publisher] VARCHAR (50),
-	[ID] INTEGER DEFAULT 0
+	[ID] INT NOT NULL IDENTITY(1,1) PRIMARY KEY
 )

@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<DatabaseContext>();
 builder.Services.AddSingleton<UserRepository>();
 builder.Services.AddSingleton<BookDetailsRepository>();
+builder.Services.AddSingleton<AuthorsRepository>();
 builder.Services.AddSingleton<DatabaseConfig>(serviceProvider =>
 {
     var databaseConfig = new DatabaseConfig();

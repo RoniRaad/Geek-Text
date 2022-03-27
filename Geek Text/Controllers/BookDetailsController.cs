@@ -10,11 +10,13 @@ namespace Geek_Text.Controllers
     {
         private readonly ILogger<BookDetailsController> _logger;
         private readonly BookDetailsRepository _bookDetailsRepository;
+        private readonly AuthorsRepository _authorsRepository;
 
-        public BookDetailsController(ILogger<BookDetailsController> logger, BookDetailsRepository bookDetailsRepository)
+        public BookDetailsController(ILogger<BookDetailsController> logger, BookDetailsRepository bookDetailsRepository, AuthorsRepository authorsRepository)
         {
             _logger = logger;
             _bookDetailsRepository = bookDetailsRepository;
+            _authorsRepository = authorsRepository;
         }
 
         [HttpPost(Name = "Add Book")]
@@ -23,16 +25,27 @@ namespace Geek_Text.Controllers
             return await _bookDetailsRepository.AddBook(bookDetails);
         }
         
-        [HttpGet("ISBN/{ISBN}", Name = "GetByISBN")]
+        [HttpGet("ISBN", Name = "GetByISBN")]
         public async Task<BookDetails> GetByISBN(string isbn)
         {
             return await _bookDetailsRepository.GetByISBN(new BookDetails { ISBN = isbn });
         }
 
-        [HttpGet("Author/{Author}", Name = "GetByAuthor")]
-        public async Task<IEnumerable<BookDetails>> GetByAuthor(string author)
+        [HttpGet("Author", Name = "GetByAuthorLastName")]
+        public async Task<IEnumerable<BookDetails>> GetByAuthor(string lastName)
         {
-            return await _bookDetailsRepository.GetByAuthor(new BookDetails { Author = author });
+            var books = new List<BookDetails>();
+            var authors = await _authorsRepository.GetByLastName(new Author { LastName = lastName });
+            foreach(var author in authors)
+            {
+               var relevantBooks = await _bookDetailsRepository.GetByAuthor(new BookDetails { Author = author.ID });
+                
+                foreach(var book in relevantBooks)
+                {
+                    books.Add(book);
+                }
+            }
+            return books;
         }
 
     }

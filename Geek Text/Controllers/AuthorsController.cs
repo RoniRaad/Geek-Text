@@ -6,12 +6,12 @@ namespace Geek_Text.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AuthorController : ControllerBase
+    public class AuthorsController : ControllerBase
     {
-        private readonly ILogger<AuthorController> _logger;
-        private readonly AuthorRepository _authorRepository;
+        private readonly ILogger<AuthorsController> _logger;
+        private readonly AuthorsRepository _authorRepository;
 
-        public AuthorController(ILogger<AuthorController> logger, AuthorRepository authorRepository)
+        public AuthorsController(ILogger<AuthorsController> logger, AuthorsRepository authorRepository)
         {
             _logger = logger;
             _authorRepository = authorRepository;

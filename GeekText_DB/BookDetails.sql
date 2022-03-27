@@ -4,7 +4,7 @@
 	[Name] VARCHAR(50) NOT NULL,
 	[Description] VARCHAR(255) NULL,
 	[Price] DOUBLE PRECISION NOT NULL,
-	[Author] VARCHAR (50) NOT NULL,
+	[Author] INT NOT NULL,
 	[Genre] VARCHAR (50),
 	[Publisher] VARCHAR (50),
 	[Year Published] VARCHAR (4),
