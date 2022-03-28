@@ -11,6 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<DatabaseContext>();
 builder.Services.AddSingleton<UserRepository>();
+builder.Services.AddSingleton<CommentRepository>();
+builder.Services.AddSingleton<RatingRepository>();
 builder.Services.AddSingleton<DatabaseConfig>(serviceProvider =>
 {
     var databaseConfig = new DatabaseConfig();

@@ -17,13 +17,13 @@ namespace Geek_Text.Controllers
             _commentRepository = commentRepository;
         }
 
-        [HttpGet("isbn/isbn", Name = "GetRatingsByISBN")]
+        [HttpGet("isbn/isbn", Name = "GetCommentsByISBN")]
         public async Task<IEnumerable<UserComment>> GetCommentByISBN(string ISBN)
         {
             return await _commentRepository.GetCommentsByISBN(ISBN);
         }
 
-        [HttpPost(Name = "CreateRating")]
+        [HttpPost(Name = "CreateComments")]
         public async Task<UserComment> CreateRating(UserComment userComment)
         {
             return await _commentRepository.AddComment(userComment);

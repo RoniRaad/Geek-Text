@@ -22,7 +22,7 @@ namespace Geek_Text.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                await connection.QueryAsync<UserComment>("INSERT INTO BookComment(Comment, BookISBN, Created, UserId) VALUES (@Comment, @BookISBN @Created, @UserId)", userRating);
+                await connection.QueryAsync<UserComment>("INSERT INTO BookComment(Comment, BookISBN, Created, UserId) VALUES (@Comment, @BookISBN, default, @UserId)", userRating);
             }
 
             return userRating;
