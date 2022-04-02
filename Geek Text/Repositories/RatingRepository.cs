@@ -10,6 +10,7 @@ namespace Geek_Text.Repositories
         {
             _context = dbContext;
         }
+
         public async Task<IEnumerable<UserRating>> GetRatingsByISBN(string ISBN)
         {
             using (var connection = _context.CreateConnection())
@@ -26,6 +27,22 @@ namespace Geek_Text.Repositories
             }
 
             return userRating;
+        }
+
+        public async Task<IEnumerable<UserRating>> GetRatingsSortedByRating(string bookIsbn)
+        {
+            using (var connection = _context.CreateConnection())
+            {
+                return await connection.QueryAsync<UserRating>("SELECT * FROM BookRating WHERE BookISBN=@BookISBN", new { BookISBN = bookIsbn });
+            }
+        }
+
+        public async Task<float> GetAverageRating(string bookIsbn)
+        {
+            using (var connection = _context.CreateConnection())
+            {
+                return await connection.QueryFirstAsync<float>("SELECT AVG(Rating) FROM BookRating WHERE BookISBN=@BookISBN", new { BookISBN = bookIsbn });
+            }
         }
     }
 }
