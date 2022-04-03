@@ -10,7 +10,7 @@ namespace Geek_Text.Repositories
         {
             _context = dbContext;
         }
-        public async Task<IEnumerable<UserComment>> GetCommentsByISBN(string ISBN)
+        public async Task<IEnumerable<UserComment>> GetCommentsByISBN(int ISBN)
         {
             using (var connection = _context.CreateConnection())
             {
@@ -22,7 +22,7 @@ namespace Geek_Text.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                await connection.QueryAsync<UserComment>("INSERT INTO BookComment(Comment, BookISBN, Created, UserId) VALUES (@Comment, @BookISBN, default, @UserId)", userRating);
+                await connection.QueryAsync<UserComment>("INSERT INTO BookComment(Comment, BookISBN, Created, UserId) VALUES (@Comment, @BookISBN, @Created, @UserId)", userRating);
             }
 
             return userRating;

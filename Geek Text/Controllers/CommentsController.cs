@@ -18,7 +18,7 @@ namespace Geek_Text.Controllers
         }
 
         [HttpGet("isbn/isbn", Name = "GetCommentsByISBN")]
-        public async Task<IEnumerable<UserComment>> GetCommentByISBN(string ISBN)
+        public async Task<IEnumerable<UserComment>> GetCommentByISBN(int ISBN)
         {
             return await _commentRepository.GetCommentsByISBN(ISBN);
         }
