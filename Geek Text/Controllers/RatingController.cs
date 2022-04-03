@@ -17,25 +17,27 @@ namespace Geek_Text.Controllers
             _ratingRepository = ratingRepository;
         }
 
-        [HttpGet("isbn/isbn", Name = "GetRatingsByISBN")]
-        public async Task<IEnumerable<UserRating>> GetUserById(string ISBN)
+        [HttpGet("isbn/{isbn}", Name = "GetRatingsByISBN")]
+        public async Task<IEnumerable<UserRating>> GetRatingsByISBN(string isbn)
         {
-            return await _ratingRepository.GetRatingsByISBN(ISBN);
+            return await _ratingRepository.GetRatingsByISBN(isbn);
         }
 
         [HttpPost(Name = "CreateRating")]
-        public async Task<UserRating> CreateRating(UserRating userRating)
+        public async Task<IActionResult> CreateRating(UserRating userRating)
         {
-            return await _ratingRepository.AddRating(userRating);
+            if (userRating.Rating < 0 || userRating.Rating > 5)
+                return BadRequest("Rating must be between 0 and 5");
+            return Ok(await _ratingRepository.AddRating(userRating));
         }
 
-        [HttpPost(Name = "GetAllRatingsSortByRating")]
+        [HttpGet("AllRatings", Name = "GetAllRatingsSortByRating")]
         public async Task<IEnumerable<UserRating>> GetAllRatingsSorted(string bookIsbn)
         {
             return await _ratingRepository.GetRatingsSortedByRating(bookIsbn);
         }
 
-        [HttpPost(Name = "GetAverageRating")]
+        [HttpGet("AverageRating", Name = "GetAverageRating")]
         public async Task<float> GetAverageRating(string bookIsbn)
         {
             return await _ratingRepository.GetAverageRating(bookIsbn);

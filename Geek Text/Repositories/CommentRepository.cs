@@ -10,13 +10,6 @@ namespace Geek_Text.Repositories
         {
             _context = dbContext;
         }
-        public async Task<IEnumerable<UserComment>> GetCommentsByISBN(int ISBN)
-        {
-            using (var connection = _context.CreateConnection())
-            {
-                return await connection.QueryAsync<UserComment>("SELECT * FROM BookComment WHERE BookISBN=@BookId;", new { BookId = ISBN });
-            }
-        }
 
         public async Task<UserComment> AddComment(UserComment userRating)
         {

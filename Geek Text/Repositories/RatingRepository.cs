@@ -33,7 +33,7 @@ namespace Geek_Text.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                return await connection.QueryAsync<UserRating>("SELECT * FROM BookRating WHERE BookISBN=@BookISBN", new { BookISBN = bookIsbn });
+                return await connection.QueryAsync<UserRating>("SELECT * FROM BookRating WHERE BookISBN=@BookISBN ORDER BY Rating DESC", new { BookISBN = bookIsbn });
             }
         }
 
