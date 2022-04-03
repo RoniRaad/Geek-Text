@@ -28,5 +28,11 @@ namespace Geek_Text.Controllers
         {
             return await _commentRepository.AddComment(userComment);
         }
+
+        [HttpPost(Name = "GetComments")]
+        public async Task<IEnumerable<UserComment>> GetRating(string bookIsbn)
+        {
+            return await _commentRepository.GetComments(bookIsbn);
+        }
     }
 }

@@ -28,5 +28,17 @@ namespace Geek_Text.Controllers
         {
             return await _ratingRepository.AddRating(userRating);
         }
+
+        [HttpPost(Name = "GetAllRatingsSortByRating")]
+        public async Task<IEnumerable<UserRating>> GetAllRatingsSorted(string bookIsbn)
+        {
+            return await _ratingRepository.GetRatingsSortedByRating(bookIsbn);
+        }
+
+        [HttpPost(Name = "GetAverageRating")]
+        public async Task<float> GetAverageRating(string bookIsbn)
+        {
+            return await _ratingRepository.GetAverageRating(bookIsbn);
+        }
     }
 }

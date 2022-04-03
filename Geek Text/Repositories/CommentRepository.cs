@@ -27,5 +27,14 @@ namespace Geek_Text.Repositories
 
             return userRating;
         }
+
+        public async Task<IEnumerable<UserComment>> GetComments(string bookIsbn)
+        {
+            using (var connection = _context.CreateConnection())
+            {
+                return await connection.QueryAsync<UserComment>("SELECT * FROM BookComment WHERE BookISBN=@BookISBN;", new { BookISBN = bookIsbn});
+            }
+        }
+
     }
 }
