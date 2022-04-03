@@ -22,6 +22,8 @@ namespace Geek_Text
             {
                 await connection.QueryAsync("TRUNCATE TABLE users;");
                 await connection.QueryAsync("INSERT INTO users(Email, PasswordHash, Name, [Home Address]) VALUES ('test@test.com', 'injbdeftnijdb', 'Test Name', 'Test Address');");
+                await connection.QueryAsync("TRUNCATE TABLE DBO.Authors;");
+                await connection.QueryAsync("TRUNCATE TABLE DBO.BookDetails;");
             }
         }
     }
