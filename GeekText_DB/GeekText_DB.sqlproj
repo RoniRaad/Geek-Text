@@ -61,5 +61,7 @@
     <Build Include="users.sql" />
     <Build Include="BookDetails.sql" />
     <Build Include="Author.sql" />
+    <Build Include="BookRating.sql" />
+    <Build Include="BookComment.sql" />
   </ItemGroup>
 </Project>
