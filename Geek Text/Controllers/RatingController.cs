@@ -38,7 +38,7 @@ namespace Geek_Text.Controllers
         }
 
         [HttpGet("AverageRating", Name = "GetAverageRating")]
-        public async Task<float> GetAverageRating(string bookIsbn)
+        public async Task<float?> GetAverageRating(string bookIsbn)
         {
             return await _ratingRepository.GetAverageRating(bookIsbn);
         }

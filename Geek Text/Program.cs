@@ -14,6 +14,7 @@ builder.Services.AddSingleton<UserRepository>();
 builder.Services.AddSingleton<BookDetailsRepository>();
 builder.Services.AddSingleton<AuthorsRepository>();
 builder.Services.AddSingleton<CommentRepository>();
+builder.Services.AddSingleton<BrowsingSortingRepository>();
 builder.Services.AddSingleton<RatingRepository>();
 builder.Services.AddSingleton<DatabaseConfig>(serviceProvider =>
 
