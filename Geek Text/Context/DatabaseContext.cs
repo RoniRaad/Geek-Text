@@ -21,7 +21,11 @@ namespace Geek_Text
             using (var connection = this.CreateConnection())
             {
                 await connection.QueryAsync("TRUNCATE TABLE users;");
+                await connection.QueryAsync("TRUNCATE TABLE BookComment;");
+                await connection.QueryAsync("TRUNCATE TABLE BookRating;");
                 await connection.QueryAsync("INSERT INTO users(Email, PasswordHash, Name, [Home Address]) VALUES ('test@test.com', 'injbdeftnijdb', 'Test Name', 'Test Address');");
+                await connection.QueryAsync("TRUNCATE TABLE DBO.Authors;");
+                await connection.QueryAsync("TRUNCATE TABLE DBO.BookDetails;");
                 await connection.QueryAsync("TRUNCATE TABLE dbo.bookdetails;");
                 await connection.QueryAsync("INSERT INTO dbo.bookdetails(ISBN, Name, Description, Price,Author,Genre,Publisher, [Year Published], Sold) VALUES ('5627890', 'Book', 'Test Description',9.99 , 'Jk Rowling', 'Horror' , 'Test Publisher' , '2010' , 1000);");
                 await connection.QueryAsync("INSERT INTO dbo.bookdetails(ISBN, Name, Description, Price,Author,Genre,Publisher, [Year Published], Sold) VALUES ('5267890', 'Cook', 'Test Description',9.99 , 'Jk Rowling', 'Horror' , 'Test Publisher' , '2010' , 10000);");
