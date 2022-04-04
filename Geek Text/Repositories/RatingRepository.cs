@@ -37,11 +37,11 @@ namespace Geek_Text.Repositories
             }
         }
 
-        public async Task<float> GetAverageRating(string bookIsbn)
+        public async Task<float?> GetAverageRating(string bookIsbn)
         {
             using (var connection = _context.CreateConnection())
             {
-                return await connection.QueryFirstAsync<float>("SELECT AVG(Rating) FROM BookRating WHERE BookISBN=@BookISBN", new { BookISBN = bookIsbn });
+                return await connection.QueryFirstAsync<float?>("SELECT AVG(Rating) FROM BookRating WHERE BookISBN=@BookISBN", new { BookISBN = bookIsbn });
             }
         }
     }

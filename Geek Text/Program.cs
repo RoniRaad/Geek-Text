@@ -14,8 +14,10 @@ builder.Services.AddSingleton<UserRepository>();
 builder.Services.AddSingleton<BookDetailsRepository>();
 builder.Services.AddSingleton<AuthorsRepository>();
 builder.Services.AddSingleton<CommentRepository>();
+builder.Services.AddSingleton<BrowsingSortingRepository>();
 builder.Services.AddSingleton<RatingRepository>();
 builder.Services.AddSingleton<DatabaseConfig>(serviceProvider =>
+
 {
     var databaseConfig = new DatabaseConfig();
     databaseConfig.ConnectionString = builder.Configuration.GetSection("ConnectionStrings").GetValue<string>("Database");
