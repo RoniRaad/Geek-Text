@@ -60,4 +60,7 @@
   <ItemGroup>
     <Build Include="users.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="GeekText_DB.refactorlog" />
+  </ItemGroup>
 </Project>
