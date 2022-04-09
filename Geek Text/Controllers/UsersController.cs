@@ -10,6 +10,7 @@ namespace Geek_Text.Controllers
     {
         private readonly ILogger<UsersController> _logger;
         private readonly UserRepository _userRepository;
+        
 
         public UsersController(ILogger<UsersController> logger, UserRepository userRepository)
         {
@@ -23,7 +24,7 @@ namespace Geek_Text.Controllers
             return await _userRepository.GetUser(new User { Id = id });
         }
 
-        [HttpGet]
+        [HttpGet(Name = "GetUsers")]
         public async Task<IEnumerable <User>> GetUsers()
         {
             return await _userRepository.GetUsers();
@@ -44,7 +45,14 @@ namespace Geek_Text.Controllers
            
         }
 
-    
+
+        [HttpPut(Name = "UpdateUser")]
+        public async Task<User> Put([FromBody] User user)
+        {
+            return await _userRepository.Put(user);
+        }
+
+
 
     }
 }

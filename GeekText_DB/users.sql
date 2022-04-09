@@ -4,5 +4,6 @@
 	[Email] VARCHAR(25) NOT NULL,
 	[PasswordHash] VARCHAR(255) NOT NULL,
 	[Name] VARCHAR(25),
-	[Home Address] VARCHAR(100)
+	[Address] VARCHAR(100), 
+    
 )

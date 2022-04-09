@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<DatabaseContext>();
 builder.Services.AddSingleton<UserRepository>();
+builder.Services.AddSingleton<CreditCardRepository>();
 builder.Services.AddSingleton<DatabaseConfig>(serviceProvider =>
 {
     var databaseConfig = new DatabaseConfig();

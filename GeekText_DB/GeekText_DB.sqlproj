@@ -59,5 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="users.sql" />
+    <Build Include="creditcards.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="GeekText_DB.refactorlog" />
   </ItemGroup>
 </Project>
