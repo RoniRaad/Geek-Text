@@ -22,6 +22,9 @@ namespace Geek_Text
             {
                 await connection.QueryAsync("TRUNCATE TABLE users;");
                 await connection.QueryAsync("INSERT INTO users(Email, PasswordHash, Name, [Home Address]) VALUES ('test@test.com', 'injbdeftnijdb', 'Test Name', 'Test Address');");
+
+                await connection.QueryAsync("TRUNCATE TABLE dbo.shopping_cart;");
+                await connection.QueryAsync("INSERT INTO dbo.shopping_cart (UserId, BookIsbns) VALUES( 3, '9785321569852')");
             }
         }
     }

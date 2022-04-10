@@ -9,8 +9,7 @@
     <ProjectGuid>{1a99807d-cd28-47bb-a8a2-23f03ddb7822}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
-    <RootPath>
-    </RootPath>
+    <RootPath />
     <RootNamespace>GeekText_DB</RootNamespace>
     <AssemblyName>GeekText_DB</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
@@ -48,7 +47,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
-    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
     <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
     <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
   </PropertyGroup>
@@ -59,5 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="users.sql" />
+    <Build Include="Shopping_cart.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="GeekText_DB.refactorlog" />
   </ItemGroup>
 </Project>

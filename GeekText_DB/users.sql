@@ -6,3 +6,4 @@
 	[Name] VARCHAR(25),
 	[Home Address] VARCHAR(100)
 )
+
