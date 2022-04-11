@@ -23,12 +23,13 @@ namespace Geek_Text.Controllers
             return await _creditcardRepository.CreateCreditCard(creditcard);
         }
 
-        [HttpGet("id/{id}", Name = "GetCreditCardsByUserId")]
-        public async Task<IEnumerable<CreditCard>> GetCreditCardsByUserId(int id)
+        [HttpGet("id/{id}", Name = "GetCreditCardsByUsersId")]
+        public async Task<IEnumerable<CreditCard>> GetCreditCardsByUsersId(int id)
         {
-            return await _creditcardRepository.GetCreditCardsByUserId(id);
+            return await _creditcardRepository.GetCreditCardsByUsersId(id);
         }
 
+    
 
     }
 }

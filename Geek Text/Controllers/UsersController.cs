@@ -39,7 +39,7 @@ namespace Geek_Text.Controllers
 
 
         [HttpPost(Name = "CreateUser")]
-        public async Task<User> CreateUserByEmail([FromBody] User user)
+        public async Task<User> CreateUser([FromBody] User user)
        {
             return await _userRepository.CreateUser(user);
            

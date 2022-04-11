@@ -27,7 +27,7 @@ namespace Geek_Text.Repositories
         
         
 
-        public async Task<IEnumerable<CreditCard>> GetCreditCardsByUserId(int userId)
+        public async Task<IEnumerable<CreditCard>> GetCreditCardsByUsersId(int userId)
         {
             using (var connection = _context.CreateConnection())
             {
