@@ -20,7 +20,11 @@ namespace Geek_Text
         {
             using (var connection = this.CreateConnection())
             {
+                
                 await connection.QueryAsync("TRUNCATE TABLE users;");
+
+                await connection.QueryAsync("INSERT INTO users(Email, PasswordHash, Name, Address) VALUES ('test@test.com', 'injbdeftnijdb', 'Test Name', 'Test Address');");
+                
                 await connection.QueryAsync("TRUNCATE TABLE BookComment;");
                 await connection.QueryAsync("TRUNCATE TABLE BookRating;");
                 await connection.QueryAsync("INSERT INTO users(Email, PasswordHash, Name, [Home Address]) VALUES ('test@test.com', 'injbdeftnijdb', 'Test Name', 'Test Address');");

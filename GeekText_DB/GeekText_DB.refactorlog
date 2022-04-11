@@ -1,5 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="e1e80484-65ef-4323-af2a-affe46448895" ChangeDateTime="04/01/2022 03:47:36">
+    <Property Name="ElementName" Value="[dbo].[users].[Home Address]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[users]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Address" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7063d4d7-cd71-45ad-b4f3-6b9b63485a87" ChangeDateTime="04/02/2022 03:02:08">
+    <Property Name="ElementName" Value="[dbo].[creditcards].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[creditcards]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CardNumber" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="215551c9-0c24-4843-be1f-bc223b85fb6b" ChangeDateTime="04/03/2022 00:45:13">
+    <Property Name="ElementName" Value="[dbo].[creditcards].[UserId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[creditcards]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserEmail" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="40bc9aa0-6956-46cb-9b0e-891e58137342" ChangeDateTime="04/03/2022 00:56:23">
+    <Property Name="ElementName" Value="[dbo].[creditcards].[UserEmail]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[creditcards]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserID" />
   <Operation Name="Rename Refactor" Key="dcb471d6-42fc-428e-8715-7fced7650ab6" ChangeDateTime="03/10/2022 15:08:15">
     <Property Name="ElementName" Value="[dbo].[users].[horror]" />
     <Property Name="ElementType" Value="SqlSimpleColumn" />
