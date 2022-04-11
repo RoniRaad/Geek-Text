@@ -25,7 +25,6 @@ namespace Geek_Text
                 await connection.QueryAsync("INSERT INTO users(Email, PasswordHash, Name, Address) VALUES ('test@test.com', 'injbdeftnijdb', 'Test Name', 'Test Address');");
                 await connection.QueryAsync("TRUNCATE TABLE BookComment;");
                 await connection.QueryAsync("TRUNCATE TABLE BookRating;");
-                await connection.QueryAsync("INSERT INTO users(Email, PasswordHash, Name, [Home Address]) VALUES ('test@test.com', 'injbdeftnijdb', 'Test Name', 'Test Address');");
                 await connection.QueryAsync("TRUNCATE TABLE dbo.shopping_cart;");
                 await connection.QueryAsync("INSERT INTO dbo.shopping_cart (UserId, BookIsbns) VALUES( 3, '9785321569852')");
                 await connection.QueryAsync("TRUNCATE TABLE DBO.Authors;");

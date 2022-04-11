@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
-  <Operation Name="Rename Refactor" Key="a45c50a8-cb76-4faf-a2cb-05c1a57e7afc" ChangeDateTime="03/15/2022 20:17:06">
-    <Property Name="ElementName" Value="[dbo].[shopping_cart].[Isbn]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[shopping_cart]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="BookIsbns" />
+    <Operation Name="Rename Refactor" Key="a45c50a8-cb76-4faf-a2cb-05c1a57e7afc" ChangeDateTime="03/15/2022 20:17:06">
+	    <Property Name="ElementName" Value="[dbo].[shopping_cart].[Isbn]" />
+	    <Property Name="ElementType" Value="SqlSimpleColumn" />
+	    <Property Name="ParentElementName" Value="[dbo].[shopping_cart]" />
+	    <Property Name="ParentElementType" Value="SqlTable" />
+	    <Property Name="NewName" Value="BookIsbns" />
+    </Operation>
   <Operation Name="Rename Refactor" Key="e1e80484-65ef-4323-af2a-affe46448895" ChangeDateTime="04/01/2022 03:47:36">
     <Property Name="ElementName" Value="[dbo].[users].[Home Address]" />
     <Property Name="ElementType" Value="SqlSimpleColumn" />
@@ -27,17 +28,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="UserEmail" />
   </Operation>
-  <Operation Name="Rename Refactor" Key="40bc9aa0-6956-46cb-9b0e-891e58137342" ChangeDateTime="04/03/2022 00:56:23">
-    <Property Name="ElementName" Value="[dbo].[creditcards].[UserEmail]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[creditcards]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="UserID" />
   <Operation Name="Rename Refactor" Key="dcb471d6-42fc-428e-8715-7fced7650ab6" ChangeDateTime="03/10/2022 15:08:15">
     <Property Name="ElementName" Value="[dbo].[users].[horror]" />
     <Property Name="ElementType" Value="SqlSimpleColumn" />
     <Property Name="ParentElementName" Value="[dbo].[users]" />
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Horror" />
-  </Operation>
+   </Operation>
 </Operations>
