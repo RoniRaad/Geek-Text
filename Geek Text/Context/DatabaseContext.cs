@@ -22,12 +22,12 @@ namespace Geek_Text
             {
                 
                 await connection.QueryAsync("TRUNCATE TABLE users;");
-
                 await connection.QueryAsync("INSERT INTO users(Email, PasswordHash, Name, Address) VALUES ('test@test.com', 'injbdeftnijdb', 'Test Name', 'Test Address');");
-                
                 await connection.QueryAsync("TRUNCATE TABLE BookComment;");
                 await connection.QueryAsync("TRUNCATE TABLE BookRating;");
                 await connection.QueryAsync("INSERT INTO users(Email, PasswordHash, Name, [Home Address]) VALUES ('test@test.com', 'injbdeftnijdb', 'Test Name', 'Test Address');");
+                await connection.QueryAsync("TRUNCATE TABLE dbo.shopping_cart;");
+                await connection.QueryAsync("INSERT INTO dbo.shopping_cart (UserId, BookIsbns) VALUES( 3, '9785321569852')");
                 await connection.QueryAsync("TRUNCATE TABLE DBO.Authors;");
                 await connection.QueryAsync("TRUNCATE TABLE DBO.BookDetails;");
                 await connection.QueryAsync("INSERT INTO dbo.bookdetails(ISBN, Name, Description, Price,Author,Genre,Publisher, [Year Published], Sold) VALUES ('5627890', 'Book', 'Test Description',9.99 , 1234, 'Horror' , 'Test Publisher' , '2010' , 1000);");

@@ -1,4 +1,5 @@
 using Geek_Text;
+using Geek_Text.Interface;
 using Geek_Text.Models;
 using Geek_Text.Repositories;
 
@@ -11,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<DatabaseContext>();
 builder.Services.AddSingleton<UserRepository>();
-
+builder.Services.AddSingleton<IShoppingCartRepositories, ShoppingCartRepositories>();
 builder.Services.AddSingleton<CreditCardRepository>();
 builder.Services.AddSingleton<BookDetailsRepository>();
 builder.Services.AddSingleton<AuthorsRepository>();
@@ -26,6 +27,8 @@ builder.Services.AddSingleton<DatabaseConfig>(serviceProvider =>
 
     return databaseConfig;
 });
+
+//Repositories
 
 var app = builder.Build();
 
