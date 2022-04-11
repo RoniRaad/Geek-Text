@@ -27,5 +27,11 @@
     <Property Name="ParentElementName" Value="[dbo].[creditcards]" />
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="UserID" />
+  <Operation Name="Rename Refactor" Key="dcb471d6-42fc-428e-8715-7fced7650ab6" ChangeDateTime="03/10/2022 15:08:15">
+    <Property Name="ElementName" Value="[dbo].[users].[horror]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[users]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Horror" />
   </Operation>
 </Operations>

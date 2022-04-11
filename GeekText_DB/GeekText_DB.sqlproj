@@ -60,6 +60,10 @@
   <ItemGroup>
     <Build Include="users.sql" />
     <Build Include="creditcards.sql" />
+    <Build Include="BookDetails.sql" />
+    <Build Include="Author.sql" />
+    <Build Include="BookRating.sql" />
+    <Build Include="BookComment.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="GeekText_DB.refactorlog" />

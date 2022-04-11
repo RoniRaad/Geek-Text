@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[BookComments]
+(
+	[Id] INT IDENTITY(0,0) NOT NULL PRIMARY KEY,
+	Comment VARCHAR(255) NOT NULL,
+	Created TIMESTAMP NOT NULL,
+	UserId INT NOT NULL
+)
