@@ -15,7 +15,8 @@ namespace Geek_Text.Repositories
         {
             using (var connection = _context.CreateConnection())
             {
-                await connection.QueryAsync<UserComment>("INSERT INTO BookComment(Comment, BookISBN, Created, UserId) VALUES (@Comment, @BookISBN, @Created, @UserId)", userRating);
+                var id = await connection.QueryFirstAsync<int>("INSERT INTO BookComment(Comment, BookISBN, Created, UserId) OUTPUT Inserted.ID VALUES (@Comment, @BookISBN, @Created, @UserId)", userRating);
+                userRating.ID = id;
             }
 
             return userRating;
